@@ -12,6 +12,8 @@ RUN useradd -ms /bin/bash -d ${LIVY_HOME} ${LIVY_USER}
 
 # install livy.
 RUN set -eux; \
+    apt-get update -y; \
+    apt-get install vim -y; \
     apt install -y unzip curl; \
     mkdir -p ${LIVY_HOME}/.kube; \
     cd ${LIVY_HOME}; \

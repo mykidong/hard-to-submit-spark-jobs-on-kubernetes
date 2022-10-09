@@ -26,6 +26,7 @@ set +e -x
 # build docker.
 ## remove dcker image.
 docker rmi -f $(docker images -a | grep livy | awk '{print $3}')
+docker rmi -f $(docker images -a | grep spark | awk '{print $3}')
 
 set -e -x
 
